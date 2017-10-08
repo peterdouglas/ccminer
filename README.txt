@@ -1,5 +1,5 @@
 
-ccminer 2.2.1 (Sept. 2017) "optimized tribus kernel (Maxwell+)"
+ccminer 2.0 (14 May 2017) 
 ---------------------------------------------------------------
 
 ***************************************************************
@@ -9,6 +9,11 @@ If you find this tool useful and like to support its continuous
 tpruvot@github:
   BTC  : 1AJdfCpLWPNoAMDfHF1wD5y8VgKSSTHxPo
   DCR  : DsUCcACGcyP8McNMRXQwbtpDxaVUYLDQDeU
+  LBC  : bKe6pLqELL3HHSbpJXxSdn5RrY2bfrkRhF
+
+Alexis:
+  BTC  : 14EgXD7fPYD4sHBXWUi46VeiTVXNq765B8
+  XVC  : Vr5oCen8NrY6ekBWFaaWjCUFBH4dyiS57W
 
 DJM34:
   BTC donation address: 1NENYmxwZGHsKFmyjTc5WferTn5VTFb7Ze
@@ -46,8 +51,6 @@ Scrypt and Scrypt:N
 Scrypt-Jane (Chacha)
 Sibcoin (sib)
 Skein (Skein + SHA)
-Signatum (Skein cubehash fugue Streebog)
-Tribus (JH, keccak, simd)
 Woodcoin (Double Skein)
 Vanilla (Blake256 8-rounds - double sha256)
 Vertcoin Lyra2RE
@@ -85,7 +88,6 @@ its command line interface and options.
                           decred      use to mine Decred 180 bytes Blake256-14
                           deep        use to mine Deepcoin
                           dmd-gr      use to mine Diamond-Groestl
-                          equihash    use to mine ZEC, HUSH and KMD
                           fresh       use to mine Freshcoin
                           fugue256    use to mine Fuguecoin
                           groestl     use to mine Groestlcoin
@@ -113,9 +115,7 @@ its command line interface and options.
                           sib         use to mine Sibcoin
                           skein       use to mine Skeincoin
                           skein2      use to mine Woodcoin
-                          skunk       use to mine Signatum
                           timetravel  use to mine MachineCoin
-                          tribus      use to mine Denarius
                           x11evo      use to mine Revolver
                           x11         use to mine DarkCoin
                           x14         use to mine X14Coin
@@ -164,9 +164,8 @@ its command line interface and options.
       --no-color        disable colored output
   -D, --debug           enable debug output
   -P, --protocol-dump   verbose dump of protocol-level activities
-  -b, --api-bind=port   IP:port for the miner API (default: 127.0.0.1:4068), 0 disabled
-      --api-remote      Allow remote control, like pool switching, imply --api-allow=0/0
-      --api-allow=...   IP/mask of the allowed api client(s), 0/0 for all
+  -b, --api-bind        IP/Port for the miner API (default: 127.0.0.1:4068)
+      --api-remote      Allow remote control
       --max-temp=N      Only mine if gpu temp is less than specified value
       --max-rate=N[KMG] Only mine if net hashrate is less than specified value
       --max-diff=N      Only mine if net difficulty is less than specified value
@@ -277,18 +276,6 @@ so we can more efficiently implement new algorithms using the latest hardware
 features.
 
 >>> RELEASE HISTORY <<<
-  Sep. 01st 2017  v2.2.1
-                  Improve tribus algo on recent cards (up to +10%)
-
-  Aug. 13th 2017  v2.2
-                  New skunk algo, using the heavy streebog algorithm
-                  Enhance tribus algo (+10%)
-                  equihash protocol enhancement on yiimp.ccminer.org and zpool.ca
-
-  June 16th 2017  v2.1-tribus
-                  Interface equihash algo with djeZo solver (from nheqminer 0.5c)
-                  New api parameters (and multicast announces for local networks)
-                  New tribus algo
 
   May. 14th 2017  v2.0
                   Handle cryptonight, wildkeccak and cryptonight-lite

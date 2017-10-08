@@ -1,5 +1,11 @@
+#include <stdio.h>
+#include <stdint.h>
+#include <memory.h>
 
 #include <cuda_helper.h>
+#include <miner.h>
+
+
 
 #define TPB 256
 
@@ -254,7 +260,7 @@ void x13_fugue512_gpu_hash_64(uint32_t threads, uint64_t *g_hash)
 	mixtabs[thr+256] = ROR8(tmp);
 	mixtabs[thr+512] = ROL16(tmp);
 	mixtabs[thr+768] = ROL8(tmp);
-#if TPB <= 256
+#if TPB < 256
 	if (blockDim.x < 256) {
 		const uint32_t thr = (threadIdx.x + 0x80) & 0xFF;
 		const uint32_t tmp = tex1Dfetch(mixTab0Tex, thr);
@@ -364,6 +370,17 @@ void x13_fugue512_gpu_hash_64(uint32_t threads, uint64_t *g_hash)
 		#pragma unroll 4
 		for(int i = 0; i < 4; i++)
 			AS_UINT4(&pHash[i*2]) = AS_UINT4(&Hash[i*4]);
+
+
+		/*	printf("---------fugue gpu----------------\n");
+		unsigned char *hhh = (unsigned char*)Hash;
+		for (size_t i = 0; i < 32; i++)
+		{
+		printf("%02x", hhh[i]);
+		}
+		printf("\n+++++++++++++++++++++++++++++\n");*/
+
+
 	}
 }
 
@@ -401,5 +418,6 @@ void x13_fugue512_cpu_hash_64(int thr_id, uint32_t threads, uint32_t startNounce
 	dim3 grid((threads + threadsperblock-1)/threadsperblock);
 	dim3 block(threadsperblock);
 
-	x13_fugue512_gpu_hash_64 <<<grid, block>>> (threads, (uint64_t*)d_hash);
+	x13_fugue512_gpu_hash_64 << <grid, block >> > (threads, (uint64_t*)d_hash);
+
 }

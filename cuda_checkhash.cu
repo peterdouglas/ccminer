@@ -174,6 +174,7 @@ void cuda_checkhash_64_suppl(uint32_t startNounce, uint32_t *hash, uint32_t *res
 
 	uint32_t *inpHash = &hash[thread << 4];
 
+
 	if (hashbelowtarget(inpHash, pTarget)) {
 		int resNum = ++resNonces[0];
 		__threadfence();

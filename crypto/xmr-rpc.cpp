@@ -30,10 +30,6 @@
 #define MADV_HUGEPAGE 0
 #endif
 
-#ifndef MADV_HUGEPAGE
-#define MADV_HUGEPAGE 0
-#endif
-
 #ifndef PRIu64
 #define PRIu64 "I64u"
 #endif
@@ -832,10 +828,7 @@ static bool download_inital_scratchpad(const char* path_to, const char* url)
 	if (opt_protocol && opt_debug) {
 		curl_easy_setopt(curl, CURLOPT_VERBOSE, 1);
 	}
-	if (opt_proxy) {
-		curl_easy_setopt(curl, CURLOPT_PROXY, opt_proxy);
-		curl_easy_setopt(curl, CURLOPT_PROXYTYPE, opt_proxy_type);
-	}
+
 	curl_easy_setopt(curl, CURLOPT_URL, url);
 	curl_easy_setopt(curl, CURLOPT_CONNECTTIMEOUT, 30);
 	curl_easy_setopt(curl, CURLOPT_TIMEOUT, 300);

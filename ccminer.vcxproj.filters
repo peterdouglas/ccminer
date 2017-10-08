@@ -46,9 +46,6 @@
     <Filter Include="Source Files\CUDA\qubit">
       <UniqueIdentifier>{f3ed23a2-8ce7-41a5-b051-6da56047dc35}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\CUDA\skunk">
-      <UniqueIdentifier>{23ed23a2-8e7a-65a2-b051-8aa63047d352}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\CUDA\x11">
       <UniqueIdentifier>{dd751f2d-bfd6-42c1-8f9b-cbe94e539353}</UniqueIdentifier>
     </Filter>
@@ -106,11 +103,8 @@
     <Filter Include="Source Files\CUDA\xmr">
       <UniqueIdentifier>{0f9aec5e-5409-488f-992a-2c108590d1ac}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\equi">
-      <UniqueIdentifier>{031afae7-2a78-4e32-9738-4b589b6f7ff3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\CUDA\tribus">
-      <UniqueIdentifier>{1e548d79-c217-4203-989a-a592fe2b2de3}</UniqueIdentifier>
+    <Filter Include="Source Files\CUDA\x14">
+      <UniqueIdentifier>{085dd23d-01d9-48ba-9d4a-0fa26439aac0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -303,9 +297,6 @@
     <ClCompile Include="nvapi.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="nvsettings.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="sia\sia-rpc.cpp">
       <Filter>Source Files\sia</Filter>
     </ClCompile>
@@ -333,17 +324,8 @@
     <ClCompile Include="crypto\wildkeccak-cpu.cpp">
       <Filter>Source Files\crypto\bbr</Filter>
     </ClCompile>
-    <ClCompile Include="equi\equi.cpp">
-      <Filter>Source Files\equi</Filter>
-    </ClCompile>
-    <ClCompile Include="equi\equihash.cpp">
-      <Filter>Source Files\equi</Filter>
-    </ClCompile>
-    <ClCompile Include="equi\equi-stratum.cpp">
-      <Filter>Source Files\equi</Filter>
-    </ClCompile>
-    <ClCompile Include="equi\blake2\blake2bx.cpp">
-      <Filter>Source Files\equi</Filter>
+    <ClCompile Include="sph\sm3.c">
+      <Filter>Source Files\sph</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -587,11 +569,8 @@
     <ClInclude Include="crypto\cryptonight.h">
       <Filter>Source Files\CUDA\xmr</Filter>
     </ClInclude>
-    <ClInclude Include="equi\eqcuda.hpp">
-      <Filter>Source Files\equi</Filter>
-    </ClInclude>
-    <ClInclude Include="equi\equihash.h">
-      <Filter>Source Files\equi</Filter>
+    <ClInclude Include="sph\sph_sm3.h">
+      <Filter>Source Files\sph</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -760,24 +739,6 @@
     <CudaCompile Include="pentablake.cu">
       <Filter>Source Files\CUDA</Filter>
     </CudaCompile>
-    <CudaCompile Include="skunk\skunk.cu">
-      <Filter>Source Files\CUDA\skunk</Filter>
-    </CudaCompile>
-    <CudaCompile Include="skunk\cuda_skunk.cu">
-      <Filter>Source Files\CUDA\skunk</Filter>
-    </CudaCompile>
-    <CudaCompile Include="skunk\cuda_skunk_streebog.cu">
-      <Filter>Source Files\CUDA\skunk</Filter>
-    </CudaCompile>
-    <CudaCompile Include="tribus\tribus.cu">
-      <Filter>Source Files\CUDA\tribus</Filter>
-    </CudaCompile>
-    <CudaCompile Include="tribus\cuda_echo512_final.cu">
-      <Filter>Source Files\CUDA\tribus</Filter>
-    </CudaCompile>
-    <ClInclude Include="tribus\cuda_echo512_aes.cuh">
-      <Filter>Source Files\CUDA\tribus</Filter>
-    </ClInclude>
     <CudaCompile Include="x11\sib.cu">
       <Filter>Source Files\CUDA\x11</Filter>
     </CudaCompile>
@@ -943,8 +904,11 @@
     <CudaCompile Include="crypto\wildkeccak.cu">
       <Filter>Source Files\CUDA</Filter>
     </CudaCompile>
-    <CudaCompile Include="equi\cuda_equi.cu">
-      <Filter>Source Files\equi</Filter>
+    <CudaCompile Include="x14\cuda_sm3.cu">
+      <Filter>Source Files\CUDA\x14</Filter>
+    </CudaCompile>
+    <CudaCompile Include="x14\hsr.cu">
+      <Filter>Source Files\CUDA\x14</Filter>
     </CudaCompile>
   </ItemGroup>
   <ItemGroup>

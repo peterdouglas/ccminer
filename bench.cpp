@@ -80,7 +80,6 @@ void algo_free_all(int thr_id)
 	free_qubit(thr_id);
 	free_skeincoin(thr_id);
 	free_skein2(thr_id);
-	free_skunk(thr_id);
 	free_sha256d(thr_id);
 	free_sha256t(thr_id);
 	free_sia(thr_id);
@@ -101,7 +100,6 @@ void algo_free_all(int thr_id)
 	free_scrypt(thr_id);
 	free_scrypt_jane(thr_id);
 	free_timetravel(thr_id);
-	free_tribus(thr_id);
 	free_bitcore(thr_id);
 }
 

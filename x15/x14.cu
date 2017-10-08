@@ -20,6 +20,8 @@ extern "C" {
 #include "sph/sph_hamsi.h"
 #include "sph/sph_fugue.h"
 #include "sph/sph_shabal.h"
+
+
 }
 
 #include "miner.h"
